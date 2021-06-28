@@ -1,12 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <hours_sum></hours_sum>
+    <scm_to_hour></scm_to_hour>
+    <scm_sum></scm_sum>
   </div>
 </template>
+
+<script>
+
+import hours_sum from './components/hours_sum.vue'
+import scm_to_hour from './components/scm_to_hour.vue'
+import scm_sum from './components/scm_sum.vue'
+
+export default {
+  name: 'App',
+  components: {
+    hours_sum,scm_to_hour,scm_sum
+  },
+  computed: {
+    //...mapGetters(['todos_len']),
+   // ...mapState(['hours','scm'])
+  },
+  methods: {
+    //...mapActions(['getTodos'])
+  },
+}
+</script>
 
 <style>
 #app {
@@ -15,18 +35,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  margin-top: 60px;
 }
 </style>
